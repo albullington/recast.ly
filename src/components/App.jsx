@@ -2,16 +2,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     
+    this.handleClick.bind(this);
+    
     this.state = {
       allVideos: exampleVideoData,
       videoInPlayer: exampleVideoData[0]
     }
   }
   
-  selectVideo() {
+  handleClick(e){
     this.setState({
-      
+      videoInPlayer: e.target.value
     })
+      console.log("click");
+  }
+  
+  passHandleClickToChild() {
+    <VideoListEntry cb={this.handleClick} />
   }
   
   render() {
