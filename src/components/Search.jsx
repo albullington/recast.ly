@@ -1,7 +1,7 @@
-var Search = () => (
-  <div className="search-bar form-inline">
+var Search = (props) => (
+  <div className="search-bar form-inline"> {console.log(props)}
     <input className="form-control" type="text" />
-    <button className="btn hidden-sm-down">
+    <button className="btn hidden-sm-down" onClick = { () => handleInput(props.input.value)}>
       <span className="glyphicon glyphicon-search"></span>
     </button>
   </div> 

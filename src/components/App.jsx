@@ -18,9 +18,13 @@ class App extends React.Component {
     )
   }
 
+  handleInput(event){
+    
+  }
+
   componentDidMount() {
     // var result = [];
-      this.props.searchYouTube({'query': "something else", 'maxResults': 5, 'key': YOUTUBE_API_KEY}, 
+      this.props.searchYouTube({'query': "cats", 'maxResults': 5, 'key': YOUTUBE_API_KEY}, 
         (videoData) => {
           var result = videoData.items ;
       this.setState({
@@ -35,7 +39,8 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5>
+            <div><h5><em>search</em> <Search handleInput = {this.handleInput.bind(this)} />
+              </h5>
             </div>          
           </div>
         </nav>
