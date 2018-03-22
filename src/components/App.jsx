@@ -2,24 +2,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     
-    this.handleClick.bind(this);
-    
     this.state = {
       allVideos: exampleVideoData,
       videoInPlayer: exampleVideoData[0]
     }
   }
   
-  handleClick(e){
-    this.setState({
-      videoInPlayer: e.target.value
-    })
+  handleClick(event){
+    this.setState(
+      { videoInPlayer: event }
+    )
       console.log("click");
   }
   
-  passHandleClickToChild() {
-    <VideoListEntry cb={this.handleClick} />
-  }
+  // passHandleClickToChild() {
+  //   <VideoListEntry cb={this.handleClick} />
+  // }
   
   render() {
     return (
@@ -32,12 +30,12 @@ class App extends React.Component {
         <div className="row">
           <div className="col-md-7">
             <div><h5><em>videoPlayer</em> 
-              <VideoPlayer video={exampleVideoData[0]}/>
+              <VideoPlayer video={this.state.videoInPlayer}/>
             </h5></div>
           </div>
           <div className="col-md-5">
             <div><h5><em>videoList</em> 
-              <VideoList videos={exampleVideoData} />
+              <VideoList handleClick = {this.handleClick.bind(this)} videos={exampleVideoData} />
             </h5></div>
           </div>
         </div>
