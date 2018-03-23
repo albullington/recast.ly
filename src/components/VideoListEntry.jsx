@@ -2,7 +2,7 @@ var VideoListEntry = (props) => {
 
   return (
   
-  <div className="video-list-entry media"> {console.log("props",props)}
+  <div className="video-list-entry media">
     <div className="media-left media-middle">
       <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="logo" />
     </div>

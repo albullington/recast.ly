@@ -13,7 +13,7 @@ $.ajax({
     success: function (data) {
       // context.set(context.models, context.parse(data));
       // console.log(context.models)
-      console.log('data retrieved', data);
+      //console.log('data retrieved', data);
       callback(data)
     },
     error: function (data) {
